@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import UserService from "../../../services/users";
 import {
   Button,
   Field,
@@ -18,12 +19,22 @@ function RegisterForm() {
   const [redirectToLogin, setRedirectToLogin] = useState(false);
   const [error, setError] = useState(false);
 
+  const HandleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const user = await UserService.register({ name, email, password });
+      setRedirectToLogin(true);
+    } catch (e) {
+      setError(true);
+    }
+  };
+
   if (redirectToLogin) return <Navigate to="/login" />;
 
   return (
     <Fragment>
       <Column.Group centered>
-        <form>
+        <form onSubmit={HandleSubmit}>
           <Column size={12}>
             <Field>
               <Label size="small">Name:</Label>
