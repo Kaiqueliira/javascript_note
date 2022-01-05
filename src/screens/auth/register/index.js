@@ -1,4 +1,5 @@
 import Header from "../../../components/header";
+import RegisterForm from "../../../components/auth/register_form";
 import { Column, Section, Title, Container, Card } from "rbx";
 import LogoImage from "../../../assets/images/logo.png";
 import "../../../styles/auth.scss";
@@ -29,6 +30,7 @@ const RegisterScreen = () => (
                       </Title>
                     </Column>
                   </Column.Group>
+                  <RegisterForm />
                 </Section>
               </Card.Content>
             </Card>
