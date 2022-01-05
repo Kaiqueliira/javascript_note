@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.scss";
 import { Notification, Section } from "rbx";
+import Header from "./components/header";
 
 const App = () => (
   <>
-    <Section>
-      <Notification color="success">Javascript Notes!</Notification>
-    </Section>
+    <Header></Header>
   </>
 );
 
