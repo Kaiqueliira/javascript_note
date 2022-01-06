@@ -1,9 +1,9 @@
-import Header from "../../../components/header";
+import HeaderLogged from "../../../components/header_logged";
 
 const UserEdit = () => (
   <>
-    <Header />
-    Page USER EDIT
+    <HeaderLogged />
+    Hello World UserEdit
   </>
 );
 export default UserEdit;

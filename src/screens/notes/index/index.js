@@ -1,8 +1,9 @@
-import Header from "../../../components/header";
+import HeaderLogged from "../../../components/header_logged";
 
 const NotesScreen = () => (
   <>
-    <Header></Header>
+    <HeaderLogged />
+    Hello World
   </>
 );
 
