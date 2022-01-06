@@ -91,7 +91,7 @@ function RegisterForm() {
                 </Column.Group>
               </Control>
             </Field>
-            {error && <Help color="danger">Email or Password invalid</Help>}
+            {error && <Help color="danger">Erro ao Cadastrar Usuario</Help>}
           </Column>
         </form>
       </Column.Group>
