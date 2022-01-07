@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Column, Title } from "rbx";
+import { Column } from "rbx";
 import "../../styles/notes.scss";
 import { push as Menu } from "react-burger-menu";
 
@@ -18,6 +18,8 @@ function Notes(props) {
     if (response.data.length >= 1) {
       setNotes(response.data.reverse());
       setCurrentNote(response.data[0]);
+    } else {
+      setNotes([]);
     }
   }
 
@@ -27,11 +29,14 @@ function Notes(props) {
   };
   const selectNote = (id) => {
     const note = notes.find((note) => {
-      return note._id == id;
+      return note._id === id;
     });
     setCurrentNote(note);
   };
-
+  const deleteNote = async (note) => {
+    await NotesServices.delete(note._id);
+    fetchNotes();
+  };
   useEffect(() => {
     fetchNotes();
   }, []);
@@ -57,6 +62,7 @@ function Notes(props) {
             selectNote={selectNote}
             current_note={current_note}
             createNote={createNote}
+            deleteNote={deleteNote}
           />
         </Menu>
 
