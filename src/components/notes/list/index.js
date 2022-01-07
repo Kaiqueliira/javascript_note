@@ -1,4 +1,4 @@
-import { Column, Tag, Title, List } from "rbx";
+import { Button, Column, Tag, Title, List } from "rbx";
 import Moment from "moment";
 
 function ListNotes(props) {
@@ -7,6 +7,17 @@ function ListNotes(props) {
       <Column.Group breakpoint="mobile">
         <Column size={6} offset={1}>
           <Title size={6}>{props.notes.length} Notes</Title>
+        </Column>
+        <Column size={2}>
+          <Button
+            state="active"
+            color="custom-purple"
+            outlined
+            size="small"
+            onClick={() => props.createNote()}
+          >
+            Notes +
+          </Button>
         </Column>
       </Column.Group>
       <List className="notes-list">

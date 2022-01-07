@@ -4,7 +4,7 @@ import "../../styles/notes.scss";
 import { push as Menu } from "react-burger-menu";
 
 import List from "../notes/list";
-import NoteService from "../../services/notes";
+import NotesServices from "../../services/notes";
 
 function Notes(props) {
   const [notes, setNotes] = useState([]);
@@ -14,12 +14,17 @@ function Notes(props) {
     id: "",
   });
   async function fetchNotes() {
-    const response = await NoteService.index();
+    const response = await NotesServices.index();
     if (response.data.length >= 1) {
       setNotes(response.data.reverse());
       setCurrentNote(response.data[0]);
     }
   }
+
+  const createNote = async () => {
+    await NotesServices.create();
+    fetchNotes();
+  };
   const selectNote = (id) => {
     const note = notes.find((note) => {
       return note._id == id;
@@ -51,6 +56,7 @@ function Notes(props) {
             notes={notes}
             selectNote={selectNote}
             current_note={current_note}
+            createNote={createNote}
           />
         </Menu>
 
