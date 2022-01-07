@@ -1,10 +1,18 @@
-import HeaderLogged from "../../../components/header_logged";
+import { React, useState } from "react";
+import "../../../styles/notes.scss";
 
-const NotesScreen = () => (
-  <>
-    <HeaderLogged />
-    Hello World
-  </>
-);
+import HeaderLogged from "../../../components/header_logged";
+import Notes from "../../../components/notes";
+
+const NotesScreen = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <HeaderLogged setIsOpen={setIsOpen} isOpen={isOpen} />
+      <Notes setIsOpen={setIsOpen} isOpen={isOpen} />
+    </>
+  );
+};
 
 export default NotesScreen;
