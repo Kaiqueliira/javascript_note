@@ -6,6 +6,7 @@ import { push as Menu } from "react-burger-menu";
 import List from "../notes/list";
 import NotesServices from "../../services/notes";
 import Editor from "../notes/editor";
+import Search from "./search";
 
 function Notes(props) {
   const [notes, setNotes] = useState([]);
@@ -28,15 +29,31 @@ function Notes(props) {
     await NotesServices.create();
     fetchNotes();
   };
+
   const selectNote = (id) => {
     const note = notes.find((note) => {
       return note._id === id;
     });
     setCurrentNote(note);
   };
+
   const deleteNote = async (note) => {
     await NotesServices.delete(note._id);
     fetchNotes();
+  };
+
+  const searchNotes = async (query) => {
+    const response = await NotesServices.search(query);
+    setNotes(response.data);
+  };
+
+  const updateNote = async (oldNote, params) => {
+    const updatedNote = await NotesServices.update(oldNote._id, params);
+    const index = notes.indexOf(oldNote);
+    const newNotes = notes;
+    newNotes[index] = updatedNote.data;
+    setNotes(newNotes);
+    setCurrentNote(updatedNote);
   };
   useEffect(() => {
     fetchNotes();
@@ -55,7 +72,7 @@ function Notes(props) {
         >
           <Column.Group>
             <Column size={10} offset={1}>
-              Search...
+              <Search searchNotes={searchNotes} fetchNotes={fetchNotes} />
             </Column>
           </Column.Group>
           <List
@@ -68,7 +85,7 @@ function Notes(props) {
         </Menu>
 
         <Column size={12} className="notes-editor" id="notes-editor">
-          <Editor note={current_note} />
+          <Editor note={current_note} updateNote={updateNote} />
         </Column>
       </div>
     </>
