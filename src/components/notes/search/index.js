@@ -14,7 +14,7 @@ function Search(props) {
 
   return (
     <Column.Group className="is-vcentered" breakpoint="mobile">
-      <Column size="9" offset={1}>
+      <Column size={9} offset={1}>
         <Input
           type="text"
           name={query}
@@ -24,7 +24,7 @@ function Search(props) {
           onKeyDown={handleKeyDown}
         />
       </Column>
-      <Column mobile={2} size={1}>
+      <Column size={2} offset={1}>
         <a
           href="#"
           onClick={() => {

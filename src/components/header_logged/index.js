@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Navbar, Container, Column, Button, Dropdown } from "rbx";
 import logoImage from "../../assets/images/logo-white.png";
 import "../../styles/header.scss";
@@ -9,6 +9,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 
 function HeaderLogged(props) {
   const [redirectToHome, setRedirectToHome] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
   const logOut = async () => {
     await UsersServices.logout();
@@ -66,7 +67,7 @@ function HeaderLogged(props) {
             <Dropdown>
               <Dropdown.Trigger>
                 <Button className="button" color="white" outlined>
-                  <span>Leonardo ▼</span>
+                  <span> {user.name} ▼</span>
                 </Button>
               </Dropdown.Trigger>
               <Dropdown.Menu>

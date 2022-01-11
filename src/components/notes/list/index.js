@@ -44,14 +44,13 @@ function ListNotes(props) {
                 </Tag>
               </Column>
               <Column size={2}>
-              <FontAwesomeIcon
-                icon={faTrash}
-                onClick={() => props.deleteNote(item)}
-                color="grey"
-              />
-            </Column>
+                <FontAwesomeIcon
+                  icon={faTrash}
+                  onClick={() => props.deleteNote(item)}
+                  color="grey"
+                />
+              </Column>
             </Column.Group>
-            
           </List.Item>
         ))}
       </List>
