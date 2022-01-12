@@ -1,5 +1,5 @@
 import axios from "axios";
 
-const Api = axios.create({ baseURL: "http://192.168.100.10:3001" });
+const Api = axios.create({ baseURL: process.env.REACT_BASE_URL });
 
 export default Api;
