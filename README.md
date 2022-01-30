@@ -19,7 +19,6 @@ Ao criar o aplicativo tive como aprendizado:
 - Realizar Deploy do Projeto.
 
 Tecnologias usadas:
-FrontEnd:
 - React
 - BULMA
 - SASS
