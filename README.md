@@ -30,8 +30,40 @@ FrontEnd:
 
 <h2>Imagens do Sistema</h2>
  
-  <h3> Página Inical </h3>
-  ![pagina inicial](https://user-images.githubusercontent.com/17069316/151720578-37d84557-9302-4b53-b809-eb564521f3f2.jpg)
+  <h3> Página Inical
+  
+ ![pagina inicial](https://user-images.githubusercontent.com/17069316/151720655-5519124a-b874-4f03-8ebd-4028626ccd18.jpg)
+ 
+  </h3>
+  
+ <h3> Página de Login 
 
-  <h3> Página de Login </h3>
-  ![login](https://user-images.githubusercontent.com/17069316/151720586-5c1430eb-8554-433d-b787-a572f67b929c.jpg)
+![login](https://user-images.githubusercontent.com/17069316/151720662-fd7fb799-6d18-4f52-b5ad-f3aa50ed47aa.jpg)
+</h3>
+
+  <h3> Página de Cadastro 
+
+ ![register](https://user-images.githubusercontent.com/17069316/151720767-4b326031-008e-4784-8131-c03ab92dbf5a.jpg)
+
+ </h3>
+
+<h3> Página Principal
+
+![aplicação aberta](https://user-images.githubusercontent.com/17069316/151720794-da990eca-a389-40dc-a9c4-4e51679b6547.jpg)
+
+</h3>
+
+<h3> Criação de notas
+ 
+![criação de notas](https://user-images.githubusercontent.com/17069316/151720803-d8a9dbb1-4b3c-4c25-bea7-0225bdd5da4a.jpg)
+
+ </h3>
+ 
+<h3> Edição de Usuarios
+ 
+![edição de usuarios](https://user-images.githubusercontent.com/17069316/151720818-1659d034-d593-42f8-a5af-4d7c269fa2cd.jpg)
+
+</h3>
+ 
+  
+  
