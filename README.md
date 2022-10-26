@@ -3,6 +3,7 @@
 <p>Aplicativo inspirado no EVERNOTE para criação, edição e remoção de notas online, feito no curso da OneBitCode ministrado por Leonardo Scorza com o intuito de formação de programador fullstack.</p>
 
 Deploy: https://javascript-notes-cliente.herokuapp.com/
+Back-End: https://github.com/Kaiqueliira/javascript_note_api
 
 Ao criar o aplicativo tive como aprendizado:
 
